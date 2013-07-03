@@ -1,30 +1,43 @@
-﻿using BddMagic.Core;
+﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BddMagic.Specifications.Samples.BowlingKata.Features
 {
     [TestClass]
-    public class ScoreCalculationFeature : BddFeature
+    public class BowlingCalculatorFeature : BddFeature
     {
-        public ScoreCalculationFeature()
+        private BowlingCalculator _Calculator;
+
+        public BowlingCalculatorFeature()
             : base(
                 "Score Calculation",
                 @"As a player
                   I want the system to calculate my total score
-                  So that I know my performance")
-        {
-        }
+                  So that I know my performance") { }
 
         [TestMethod]
         public void GutterGame()
         {
             var s = Scenario("Gutter game");
 
-            s["Given a new bowling game"] = null;
-            s["When all of my balls are landing in the gutter"] = null;
-            s["Then my total score should be '0'"] = null;
+            s["Given a new bowling game"] = parameters => { GivenNewBowlingGame(); };
+            s["When all of my balls are landing in the gutter"] = parameters => { WhenGutterGame(); };
+            s["Then my total score should be '0'"] = parameters => { _Calculator.Score.Should().Be(int.Parse(parameters[0])); };
 
             s.Execute();
+        }
+
+        private void GivenNewBowlingGame()
+        {
+            _Calculator = new BowlingCalculator();
+        }
+
+        private void WhenGutterGame()
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                _Calculator.Roll(0);
+            }
         }
 
         /*
