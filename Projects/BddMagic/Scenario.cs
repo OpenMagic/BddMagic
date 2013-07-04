@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using BddMagic.Core;
 using BddMagic.Core.Helpers;
+using OpenMagic;
 
 namespace BddMagic
 {

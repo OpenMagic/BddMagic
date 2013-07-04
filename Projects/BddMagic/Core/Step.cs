@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using BddMagic.Core.Helpers;
+using OpenMagic;
 
 namespace BddMagic.Core
 {

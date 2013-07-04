@@ -1,5 +1,6 @@
 ﻿using System.IO;
-using BddMagic.Core.Helpers;
+using OpenMagic;
+using OpenMagic.Extensions;
 
 namespace BddMagic
 {
