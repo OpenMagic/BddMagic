@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BddFeature.cs" />
+    <Compile Include="Properties\CommonAssemblyInfo.cs" />
     <Compile Include="Core\Helpers\Argument.cs" />
     <Compile Include="Core\Helpers\IHideObjectMembers.cs" />
     <Compile Include="Core\Helpers\StringExtensions.cs" />
