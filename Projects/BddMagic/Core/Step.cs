@@ -49,7 +49,7 @@ namespace BddMagic.Core
 
         private void Write(TextWriter textWriter, string result)
         {
-            Console.WriteLine("{0}: {1}", Text, result);
+            Console.WriteLine("{0} [{1}]", Text.PadRight(120), result);
         }
 
         private object[] GetParameters()
