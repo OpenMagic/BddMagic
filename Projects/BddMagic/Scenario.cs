@@ -46,10 +46,7 @@ namespace BddMagic
 
             foreach (var step in this.Steps)
             {
-                if (previousStepWasSuccessful)
-                {
-                    previousStepWasSuccessful = step.Execute(textWriter, previousStepWasSuccessful);
-                }
+                previousStepWasSuccessful = step.Execute(textWriter, previousStepWasSuccessful);
             }
 
             if (!previousStepWasSuccessful)

@@ -24,7 +24,7 @@ namespace BddMagic.Core
 
             if (!previousStepWasSuccessful)
             {
-                Write(textWriter, "Pending");
+                Write(textWriter, "Pending previous step being successful");
                 return false;
             }
 
