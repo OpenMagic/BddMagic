@@ -43,7 +43,7 @@ namespace BddMagic.Core
             catch (Exception ex)
             {
                 Write(textWriter, ex.ToString());
-                return false;
+                throw;
             }
         }
 
