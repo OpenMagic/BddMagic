@@ -56,6 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenario.cs" />
     <Compile Include="Core\Step.cs" />
+    <Compile Include="DynamicHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
