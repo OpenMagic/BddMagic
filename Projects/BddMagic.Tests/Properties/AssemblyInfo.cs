@@ -1,4 +1,4 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("BddMagic.Specifications")]
+[assembly: AssemblyTitle("BddMagic.Tests")]
 [assembly: AssemblyDescription("Tests for BddMagic.")]

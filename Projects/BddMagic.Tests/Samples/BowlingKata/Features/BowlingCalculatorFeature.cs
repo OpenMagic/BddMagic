@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BddMagic.Specifications.Samples.BowlingKata.Features
+namespace BddMagic.Tests.Samples.BowlingKata.Features
 {
     [TestClass]
     public class BowlingCalculatorFeature : BddFeature

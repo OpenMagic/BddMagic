@@ -1,4 +1,4 @@
-﻿namespace BddMagic.Specifications.Samples.BowlingKata
+﻿namespace BddMagic.Tests.Samples.BowlingKata
 {
     public class BowlingCalculator
     {
