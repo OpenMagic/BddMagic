@@ -10,7 +10,6 @@ namespace BddMagic
     {
         public Scenario(BddFeature feature, string title)
         {
-            Argument.MustNotBeNull(feature, "feature");
             Argument.MustNotBeNullOrWhiteSpace(title, "title");
 
             this.Feature = feature;

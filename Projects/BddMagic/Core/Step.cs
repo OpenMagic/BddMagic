@@ -20,8 +20,6 @@ namespace BddMagic.Core
 
         public bool Execute(TextWriter textWriter, bool previousStepWasSuccessful)
         {
-            Argument.MustNotBeNull(textWriter, "textWriter");
-
             if (!previousStepWasSuccessful)
             {
                 Write(textWriter, "Pending previous step being successful");

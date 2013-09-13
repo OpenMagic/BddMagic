@@ -25,8 +25,6 @@ namespace BddMagic
 
         public void Write(TextWriter textWriter)
         {
-            Argument.MustNotBeNull(textWriter, "textWriter");
-
             textWriter.WriteLine(this.Feature);
             textWriter.WriteLine();
             this.Story.WriteLines(textWriter, trimLines: true);
