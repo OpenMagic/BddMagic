@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BddMagic;
 
 namespace BddMagic.Tests.Samples.BowlingKata.Features
 {
@@ -18,40 +19,74 @@ namespace BddMagic.Tests.Samples.BowlingKata.Features
         [TestMethod]
         public void GutterGame()
         {
-            var s = Scenario();
-
-            s["Given a new bowling game"] =
-                parameters =>
+            using (Scenario)
+            {
+                Given("a new bowling game", parameters =>
                 {
                     Calculator = new BowlingCalculator();
-                };
+                });
 
-            s["When all of my balls are landing in the gutter"] =
-                parameters =>
+                When("all of my balls are landing in the gutter", parameters =>
                 {
                     for (int frame = 1; frame <= 10; frame++)
                     {
                         Calculator.Roll(0);
                         Calculator.Roll(0);
                     }
-                };
+                });
 
-            s["Then my total score should be '0'"] =
-                parameters =>
+                Then("my total score should be '0'", parameters =>
                 {
                     Calculator.Score.Should().Be(int.Parse(parameters[0]));
-                };
+                });
+            }
+        }
 
-            s.Execute();
+        [TestMethod]
+        public void BeginnersGame()
+        {
+            using (Scenario)
+            {
+                Given("a new bowling game", p =>
+                {
+                    Calculator = new BowlingCalculator();
+                });
+
+                When("I roll '2' and '7'", p =>
+                {
+                    this.Roll(p[0]);
+                    this.Roll(p[1]);
+                });
+
+                And("I roll '3' and '4'", p =>
+                {
+                    this.Roll(p[0]);
+                    this.Roll(p[1]);
+                });
+
+                And("I roll '8' times '1' and '1'", p =>
+                {
+                    for (int i = 1; i <= int.Parse(p[0]); i++)
+                    {
+                        this.Roll(p[1]);
+                        this.Roll(p[2]);
+                    }
+                });
+
+                Then("my total score should be '32'", p =>
+                {
+                    Calculator.Score.Should().Be(int.Parse(p[0]));
+                });
+            }
+        }
+
+        private void Roll(string pins)
+        {
+            this.Calculator.Roll(int.Parse(pins));
         }
 
         /*
-Scenario: Beginners game
-  Given a new bowling game
-  When I roll 2 and 7
-  And I roll 3 and 4
-  And I roll 8 times 1 and 1
-  Then my total score should be 32
+
   
 Scenario: Another beginners game
   Given a new bowling game
