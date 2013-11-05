@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Humanizer;
 using OpenMagic;
 using OpenMagic.Extensions;
 
@@ -6,13 +7,31 @@ namespace BddMagic
 {
     public class BddFeature
     {
+        public BddFeature(string story)
+            : this("", story)
+        { }
+
         public BddFeature(string feature, string story)
         {
-            Argument.MustNotBeNullOrWhiteSpace(feature, "feature");
             Argument.MustNotBeNullOrWhiteSpace(story, "story");
+
+            if (string.IsNullOrWhiteSpace(feature))
+            {
+                feature = this.GetFeatureNameFromClassName();
+            }
 
             this.Feature = feature;
             this.Story = story;
+        }
+
+        private string GetFeatureNameFromClassName()
+        {
+            var className = this.GetType().Name;
+            var featureName = className.Humanize(LetterCasing.Title);
+
+            featureName = featureName.TextBeforeLast(" Feature", featureName);
+
+            return featureName;
         }
 
         public string Feature { get; private set; }

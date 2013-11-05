@@ -10,7 +10,6 @@ namespace BddMagic.Tests.Samples.BowlingKata.Features
 
         public BowlingCalculatorFeature()
             : base(
-                "Score Calculation",
                 @"As a player
                   I want the system to calculate my total score
                   So that I know my performance") { }

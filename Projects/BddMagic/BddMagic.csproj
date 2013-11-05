@@ -37,6 +37,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
     </Reference>
+    <Reference Include="Humanizer">
+      <HintPath>..\..\packages\Humanizer.0.6\lib\NET40\Humanizer.dll</HintPath>
+    </Reference>
     <Reference Include="OpenMagic, Version=0.1.28.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\OpenMagic.0.1.28.0\lib\net40\OpenMagic.dll</HintPath>
