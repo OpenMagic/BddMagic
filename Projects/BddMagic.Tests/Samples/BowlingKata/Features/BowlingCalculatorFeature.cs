@@ -18,7 +18,7 @@ namespace BddMagic.Tests.Samples.BowlingKata.Features
         [TestMethod]
         public void GutterGame()
         {
-            var s = Scenario("Gutter game");
+            var s = Scenario();
 
             s["Given a new bowling game"] =
                 parameters =>

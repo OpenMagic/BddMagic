@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using Humanizer;
 using OpenMagic;
 using OpenMagic.Extensions;
@@ -36,6 +37,14 @@ namespace BddMagic
 
         public string Feature { get; private set; }
         public string Story { get; private set; }
+
+        public Scenario Scenario()
+        {
+            var callingMethod = new StackTrace().GetFrame(1).GetMethod().Name;
+            var scenarioTitle = callingMethod.Humanize();
+
+            return this.Scenario(scenarioTitle);
+        }
 
         public Scenario Scenario(string scenarioTitle)
         {
