@@ -6,8 +6,10 @@ using OpenMagic;
 
 namespace BddMagic
 {
-    public class Scenario : IHideObjectMembers
+    public class Scenario : IHideObjectMembers, IDisposable
     {
+        private bool IsDisposed;
+
         public Scenario(BddFeature feature, string title)
         {
             Argument.MustNotBeNullOrWhiteSpace(title, "title");
@@ -30,8 +32,34 @@ namespace BddMagic
                 this.Steps.Add(new Step(step, value));
             }
         }
+        
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
 
-        public void Execute()
+        /// <summary>
+        /// Releases unmanaged and optionally managed resources.
+        /// </summary>
+        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.IsDisposed)
+            {
+                if (disposing)
+                {
+                    this.Execute();
+                }
+            }
+
+            this.IsDisposed = true;
+        }
+
+        private void Execute()
         {
             var textWriter = Console.Out;
 
