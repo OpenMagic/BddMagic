@@ -11,6 +11,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>BDD Framework for .NET</description>
         <copyright>Copyright (c) 2013-2023 Tim Murphy</copyright>
+        <readme>docs\readme.md</readme>
         <dependencies>
            <group>
               <dependency id="OpenMagic" />
