@@ -70,7 +70,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="..\BddMagic\Properties\CommonAssemblyInfo.cs">
+    <Compile Include="..\..\Source\BddMagic\Properties\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,7 +78,7 @@
     <Compile Include="Samples\BowlingKata\Features\BowlingCalculatorFeature.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BddMagic\BddMagic.csproj">
+    <ProjectReference Include="..\..\Source\BddMagic\BddMagic.csproj">
       <Project>{ab139e51-26f6-456b-91f0-f9b9b18adc56}</Project>
       <Name>BddMagic</Name>
     </ProjectReference>

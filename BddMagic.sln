@@ -1,17 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21126.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34301.259
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BddMagic", "Projects\BddMagic\BddMagic.csproj", "{AB139E51-26F6-456B-91F0-F9B9B18ADC56}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5F22290-1EE6-490B-8EF5-4238CD1803AF}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BddMagic.Tests", "Projects\BddMagic.Tests\BddMagic.Tests.csproj", "{416207A6-1919-43E7-8610-94A1A43A3AF1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9FA49DB6-447E-4183-8E18-649C6DD9DAD8}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9FA4
 		Scripts\Publish.bat = Scripts\Publish.bat
 		Scripts\PublishAndPause.bat = Scripts\PublishAndPause.bat
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BddMagic", "Source\BddMagic\BddMagic.csproj", "{AB139E51-26F6-456B-91F0-F9B9B18ADC56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BddMagic.Tests", "Tests\BddMagic.Tests\BddMagic.Tests.csproj", "{416207A6-1919-43E7-8610-94A1A43A3AF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,5 +41,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9FA49DB6-447E-4183-8E18-649C6DD9DAD8} = {D5F22290-1EE6-490B-8EF5-4238CD1803AF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C68161E5-03F1-4507-BCC1-9D659B1ED21B}
 	EndGlobalSection
 EndGlobal
