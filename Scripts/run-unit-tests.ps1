@@ -17,13 +17,13 @@ Get-ChildItem -Path $testsFolder -Directory |
 
             $fullFolder = $_.FullName
             $folderName = $_.Name
-            $testAssembly = "$fullFolder\bin\$buildConfiguration\$folderName.dll"
+            $testAssembly = """$fullFolder\bin\$buildConfiguration\$folderName.dll"""
 
-            Write-Host "Running tests in $folderName..."
+            Write-Host "Running tests in $testAssembly..."
             Write-Host "----------------------------------------------------------------------"
             Write-Host
 
-            Invoke-Expression "&$mstest $testAssembly"
+            Invoke-Expression "&$mstest /testcontainer:$testAssembly"
             
             if ($LASTEXITCODE -ne 0) {
                 throw "One or more unit tests failed in $testAssembly"
