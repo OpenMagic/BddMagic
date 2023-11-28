@@ -10,7 +10,7 @@ if (-Not (Test-Path $testsFolder)) {
     throw "testsPath '$testsFolder' does not exist."
 }
 
-$msTest = "$(vswhere -property installationPath)\Common7\IDE\MSTest.exe"
+$msTest = """$(vswhere -property installationPath)\Common7\IDE\MSTest.exe"""
 
 Get-ChildItem -Path $testsFolder -Directory |
         ForEach-Object {
