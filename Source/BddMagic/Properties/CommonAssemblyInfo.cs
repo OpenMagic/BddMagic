@@ -15,6 +15,5 @@ using System.Runtime.InteropServices;
 
 [assembly: CLSCompliant(false)]
 
-// MyGet Build Services stamps the version number.
-[assembly: AssemblyVersion("0.3.1.0")]
-[assembly: AssemblyFileVersion("0.3.1.0")]
+[assembly: AssemblyVersion("0.3.2.0")]
+[assembly: AssemblyFileVersion("0.3.2.0")]
