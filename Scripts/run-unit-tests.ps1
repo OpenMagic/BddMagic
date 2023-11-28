@@ -10,6 +10,8 @@ if (-Not (Test-Path $testsFolder)) {
     throw "testsPath '$testsFolder' does not exist."
 }
 
+$msTest = "$(vswhere -property installationPath)\Common7\IDE\MSTest.exe"
+
 Get-ChildItem -Path $testsFolder -Directory |
         ForEach-Object {
 
@@ -21,7 +23,7 @@ Get-ChildItem -Path $testsFolder -Directory |
             Write-Host "----------------------------------------------------------------------"
             Write-Host
 
-            Invoke-Expression "&mstest ""$testAssembly"""
+            Invoke-Expression "&$mstest $testAssembly"
             
             if ($LASTEXITCODE -ne 0) {
                 throw "One or more unit tests failed in $testAssembly"
