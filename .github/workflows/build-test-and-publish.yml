@@ -12,7 +12,7 @@ env:
   SOLUTION_FILE_PATH: .\BddMagic.sln
   NUGET_FILE_PATH: .\BddMagic.nuspec
   MAJOR_PROJECT_FOLDER: .\Source\BddMagic
-  VERSION: 0.3.2
+  VERSION: 0.3.3
   TESTS_FOLDER: .\tests
   BUILD_CONFIGURATION: Release
   BUILD_TARGET: ReBuild

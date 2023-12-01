@@ -15,7 +15,7 @@
         <dependencies>
             <group targetFramework=".NETFramework4.8">
                 <dependency id="Humanizer" version="2.14.1" />
-                <dependency id="OpenMagic" version="4.0.0" />
+                <dependency id="OpenMagic" version="4.1.0" />
             </group>
         </dependencies>    
     </metadata>
